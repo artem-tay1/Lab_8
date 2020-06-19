@@ -1,0 +1,34 @@
+<html>
+<head>
+    <title>You Login</title>
+</head>
+<body>
+    You Login:
+    <form action="lab_8.jsp" method="get">
+        <input name="name" type="text"/>
+        <input type="submit">
+    </form>
+</body>
+</html>
+
+
+
+<html>
+<head>
+    <title>Result</title>
+</head>
+<body>
+    <%
+    java.util.HashMap names = new java.util.HashMap();
+    names.put("at123","Artem Taylakov");
+    names.put("super","Vasily Petrov");
+    names.put("john","Eugene Sidorov");
+    String name = request.getParameter("name");
+    if (names.containsKey(name)) {
+        out.println("Hello, " + names.get(name));
+    } else {
+        out.println("Ivalid user!");
+    }
+    %>
+</body>
+</html>
